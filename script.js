@@ -18,9 +18,12 @@ function switchToHomePage() {
 
 function startLoadingBar() {
     const brand = document.getElementById("brand");
-    if (brand) {
-        brand.classList.add('loading');  // Start the loading animation
-    }
+    brand.classList.remove('loading'); // Reset the animation
+    
+    // Force reflow to restart the animation
+    void brand.offsetWidth; // Trigger reflow to restart animation
+
+    brand.classList.add('loading');  // Reapply the loading animation
 }
 
 window.addEventListener("DOMContentLoaded", () => {
