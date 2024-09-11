@@ -1,0 +1,88 @@
+*{
+    margin-top: 0;
+    margin-left: 0;
+    left:0;
+    top:0;
+    box-sizing: border-box;
+}
+
+.screen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    display : flex;
+    align-items: center;
+    justify-content:center;
+    transition:opacity 1s ease-in-out;
+    opacity: 1;
+}
+.hidden{
+    opacity:0;
+    pointer-events: none;
+    transition:opacity 1s ease-in-out;
+}
+
+#continue{
+    font-family: "Assistant",sans-serif;
+    font-weight: 700;
+    margin-top: 80px;
+    font-size: 30px;
+    border-radius: 4px;
+    padding: 10px 30px;
+    background-color: black;
+    border-color: red;
+    color: red;
+    border-width: 1px;
+}
+#continue:hover{
+
+    color: black;
+    background-color: red;
+    border-color: black;
+
+}
+
+#loading-screen{
+    background-color: black;
+    flex-direction: column;
+}
+#background_brand{
+
+    background-color: gray;
+}
+#brand {
+    width: 500px; /* Adjust size as needed */
+    height: 500px; /* Adjust size as needed */
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+
+}
+
+#brand::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red; /* Fill color */
+    transform: translateY(100%);
+    transition: transform 3s ease-in-out; /* Adjust duration */
+}
+#brand.loading::before {
+    transform: translateY(0); /* Fills the brand element like a loading bar */
+    transition: transform 5s ease-in-out; /* Adjust duration for the loading effect */
+}
+#container{
+    perspective: 100px;
+    transition:ease-in-out;
+}
+#container button:hover{
+    transform: rotateX(30deg);
+    transform:translateZ(30px) ;
+    transition-duration: 1s;
+    box-shadow: 10px 5px 5px 0.2 rgb(121, 120, 120);
+}
