@@ -7,14 +7,6 @@
 }
 
 .screen{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top:0;
-    left: 0;
-    display : flex;
-    align-items: center;
-    justify-content:center;
     transition:opacity 1s ease-in-out;
     opacity: 1;
 }
@@ -23,7 +15,6 @@
     pointer-events: none;
     transition:opacity 1s ease-in-out;
 }
-
 #continue{
     font-family: "Assistant",sans-serif;
     font-weight: 700;
@@ -45,6 +36,14 @@
 }
 
 #loading-screen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    display : flex;
+    align-items: center;
+    justify-content:center;
     background-color: black;
     flex-direction: column;
 }
@@ -53,7 +52,6 @@
     background-color: gray;
 }
 #brand {
-    width: 500px; /* Adjust size as needed */
     height: 500px; /* Adjust size as needed */
     background-size: contain;
     position: relative;
@@ -85,4 +83,50 @@
     transform:translateZ(30px) ;
     transition-duration: 1s;
     box-shadow: 10px 5px 5px 0.2 rgb(121, 120, 120);
+}
+#home{
+    display: flex;
+}
+.logo{
+    background-color: red;
+}
+.nav{
+    background-color: black;
+    opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    perspective: 700px;
+}
+#menu{
+    display: flex;
+    perspective: 700px;
+}
+.logo:hover{
+    transform: translateZ(15px);
+ 
+    transition: 0.5s;
+    background-color: red;
+
+
+}
+.links{
+    padding: 10px 30px;
+    color: red;
+    text-align: center;
+    border-radius: 4px;
+    font-family: "Assistant",sans-serif;
+    align-content: center;
+    transition: linear 2s ease-in-out;
+}
+.links:hover{
+
+    transform: translateZ(35px);
+    transition: 0.5s;
+    color:black;
+    background-color: white;
+
+}
+#hero h1{
+    color: black;
+    
 }
