@@ -11,37 +11,101 @@
 </head>
 <body>
     <!--Loading Screen-->
-    <div id="loading-screen" class ="screen ">
+    <div id="loading-screen" class="screen">
         <div id="background_brand">
-            <div id="brand"><img src="brand_of_sacrifice.png" alt="brand_of_sacrifice" id ="brand"> </div>
+            <object data="brand.svg" type="image/svg+xml" id="brand" class="loading_bar"></object> <!-- Only one #brand -->
         </div>
         <div id="container">
-            <button id="continue" class ="hidden">C O N T I N U E</button>
+            <button id="continue" class="hidden">C O N T I N U E</button>
         </div>
-
     </div>
+    
     <!--Home Page-->   
     <div id="home-page" class ="screen home hidden" >
+        <div id="container">
         <!--NavBar-->
-        <div class="nav" style="display: flex;">
-            <div class="logo"><img src="brand_of_sacrifice.png" width="100px"></div>
-            <div id="menu">
-            <div class="links">Hero</div>
-            <div class="links">About Me</div>
-            <div class="links">Projects</div>
-            <div class="links">Contacts</div></div>
-        </div>
-        <!--Hero Section-->
-        <div id="hero">
-            <h1>
-                RISHIT KADHA
-            </h1>
-            <p>Developer...</p>
+            <div class="nav" style="display: flex;">
+                <div class="logo"><img src="brand_of_sacrifice.png" width="100px"></div>
+                <div id="menu">
+                <div class="links">Hero</div>
+                <div class="links">About Me</div>
+                <div class="links">Portfolio</div>
+                <div class="links">Contact</div></div>
+            </div>
+            <!--Hero Section-->
+            <div id="hero">
+                <h1 class="primary">RISHIT KADHA</h1>
+                <p class="secondary">Web Designer <br>& <br>Developer</p>
+                <div>
+                    <!--Something Interesting-->
+                </div>
+
+            </div>
+            <!--About Me Section-->
+            <div id="About_Me" style="display: flex; background-color: #0f0f0f;">
+                <div id="pfp">
+                    <img src="/Assets/profile_pic.jpeg" >
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed, deleniti tempora similique maiores ipsa iusto amet sunt hic eum! Tenetur esse iusto quisquam impedit omnis minus aut magni magnam.</p>
+
+                </div>
+            </div>
+            <!--Portfolio Section-->
+            <div id="Portfolio" style="background-color:#0f0f0f;" >
+                <h1 class="primary">Projects</h1>
+                <section class="container">
+                    <div class="slider_wrapper">
+                        <div class="slider">
+                            <img id="slide1" src="/Assets/2dPhysicsSim.png" alt="A 2D Physics Simulator">
+                            <img id="slide2" src="/Assets/GoogleClone.png" alt="A Google Clone">
+                            <img id="slide3" src="/Assets/ZerodhaClone.png" alt="A Zerodha Landing Page Clone">
+
+                        </div>
+                        <div class="slider_nav">
+                            <a href="#slide1"></a>
+                            <a href="#slide2"></a>
+                            <a href="#slide3"></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!--Contact Section-->
+            <div style="display: flex; justify-content: space-around;">
+                <div id="Contact" style="display: flex; justify-content: space-around;">
+                    <form action="" style="display: flex; justify-content: space-around; flex-direction: column;">
+                        <div style="display: flex; justify-content: space-around;">
+                            <h1 class="primary" style="letter-spacing: normal;">
+                                Contact Me
+                            </h1>
+                        </div>
+                        <div style="display: flex; padding:  1em 2em;">
+                            <div style="margin-right: 2em; color: azure;">
+                                <label for="First_name">First Name</label><br>
+                                <input type="text" name="First_name" id="First_name">
+                            </div>
+                            <div style="color: azure;">
+                                <label for="Last_name">Last Name</label><br>
+                                <input type="text" name="Last_name" id="Last_name">
+                            </div>
+                        </div> 
+                        <div style="padding:1em 2em; align-items: center; color: azure;">
+                            <label for="email">Email</label><br>
+                            <input type="email" name="email" id="email"><br>
+                        </div>
+               
+                        <div style="padding:1em 2em; color: azure;">
+                            <label for="Message" >Message</label><br>
+                            <input type="text" name="Message" id="Message">
+                        </div>
+                    </form>
+    
+                </div>
+            </div>
+            
 
         </div>
 
-
-        <!--make a parallax scene-->
     </div>
     <!--Javascript-->
     <script src="script.js"></script>   

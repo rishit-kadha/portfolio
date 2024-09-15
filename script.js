@@ -1,5 +1,7 @@
+
 let w = window.innerWidth;
 let h = window.innerHeight;
+
 
 function onWindowResize() {
     w = window.innerWidth;
@@ -16,27 +18,15 @@ function switchToHomePage() {
     }
 }
 
-function startLoadingBar() {
-    const brand = document.getElementById("brand");
-    brand.classList.remove('loading'); // Reset the animation
-    
-    // Force reflow to restart the animation
-    void brand.offsetWidth; // Trigger reflow to restart animation
-
-    brand.classList.add('loading');  // Reapply the loading animation
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-    startLoadingBar();  // Trigger loading bar animation when page loads
-
+document.addEventListener('DOMContentLoaded', () => {
+    // Start loading animation and set up event listeners
     const continueButton = document.getElementById("continue");
-    
-    // Ensure the button only appears after 5 seconds (5000ms)
-    setTimeout(() => {
-        continueButton.classList.remove('hidden');  // Show the continue button after loading
-    }, 5000);  // Adjust this to match the loading bar duration
+    continueButton.addEventListener("click", switchToHomePage);
 
-    continueButton.addEventListener("click", switchToHomePage, false);
+    // Set a timeout to ensure the continue button appears after the loading animation
+    setTimeout(() => {
+        continueButton.classList.remove("hidden");
+    }, 5000); // Adjust timing as necessary
 });
 
 window.addEventListener("resize", onWindowResize, false);
