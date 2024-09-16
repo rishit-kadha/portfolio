@@ -116,6 +116,7 @@ body{
     background-color: red;
 }
 .links{
+    text-decoration: none;
     padding: 0.5rem 1.5em;
     color: rgb(173, 0, 0);
     text-align: center;
@@ -333,6 +334,11 @@ textarea {
 
     input, textarea {
         font-size: 0.875rem; /* Scale down inputs */
+    }
+    #About_Me div{
+        flex-direction: column;
+        gap:0;
+
     }
 }
 
