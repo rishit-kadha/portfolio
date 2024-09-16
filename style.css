@@ -182,7 +182,16 @@ body{
 #About_Me{
     padding:2rem;
 }
-#pfp{
+#aboutdiv .pfp{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1rem ;
+    pointer-events: none;
+
+}
+.pfp{
     display: flex;
     aspect-ratio: 9/16;
     overflow-x: auto;
@@ -191,10 +200,10 @@ body{
     padding: 1rem ;
     pointer-events: none;
 }
-#pfp::-webkit-scrollbar{
+.pfp::-webkit-scrollbar{
     display: none;
 }
-#pfp img{
+.pfp img{
     max-height: 30rem;
     flex: 1 0 100%;
     scroll-snap-align: start;
@@ -307,7 +316,15 @@ textarea {
     resize: vertical;
     min-height: 5rem;
 }
+#info{
+    font-size: 3rem;
+}
+#info strong{
+    font-size: 3rem;
+}
+#aboutdiv{
 
+}
 /* Make the form stack vertically on smaller screens */
 @media (max-width: 768px) {
     #Contact_box {
