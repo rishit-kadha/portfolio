@@ -7,15 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="nav" style="display: flex;">
-        <div class="logo"><img src="brand_of_sacrifice.png" width="100px"></div>
-        <div id="menu">
-        <a class="links" href="index.html">Home</a>
-        <a class="links" href="About.html">About</a>
-        <a class="links" href="Portfolio.html">Portfolio</a>
-        <a class="links" href="Contact.html">Contact</a>
+    <div id="loading-screen" class="screen"></div>
+        <div id="background_brand">
+            <object data="brand.svg" type="image/svg+xml" id="brand" class="loading_bar"></object> <!-- Only one #brand -->
+        </div>
+        <div id="container">
+            <button id="continue" class="hidden">C O N T I N U E</button>
         </div>
     </div>
+    
+    <div id="home-page" class ="screen home hidden" >
+        <div id="container">
+            <div class="nav" style="display: flex;">
+                <div class="logo"><img src="brand_of_sacrifice.png" width="100px"></div>
+                <div id="menu">
+                <a class="links" href="index.html">Home</a>
+                <a class="links" href="About.html">About</a>
+                <a class="links" href="Portfolio.html">Portfolio</a>
+                <a class="links" href="Contact.html">Contact</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
     
 </body>
 </html>
