@@ -3,9 +3,14 @@
     margin-left: 0;
     left:0;
     top:0;
+    font-family: "Roboto",sans-serif;
+    box-sizing: border-box;
 }
 body{
     background-color: (17, 17, 17);
+}
+.noscroll{
+    overflow: hidden;
 }
 
 .screen{
@@ -115,33 +120,23 @@ body{
     color: rgb(173, 0, 0);
     text-align: center;
     border-radius: 0.5rem;
-    font-family: "Assistant",sans-serif;
+    font-family: "Roboto",sans-serif;
     align-content: center;
-    transition: linear 2s ease-in-out;
+    transition: linear 2s ease;
 }
 .links:hover{
 
-    transform: translateZ(35px);
+    transform: scale(1.1);
     transition: 0.7s;
-    color:black;
-    background-color: white;
-
+    color: red;
 }
 #hero{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(17, 17, 17);
+    background-color:#000 ;
 }
 
-.monospace{
-    font-family: monospace;
-    font-size: 2em;
-    letter-spacing: 1em;
-    font-weight: 100;
-    text-align: center;
-    line-height: 2em;
-}
 .primary{
     color: azure;
     font-family: 'Roboto',sans-serif;
@@ -149,13 +144,18 @@ body{
     letter-spacing: 1rem;
     font-size: 2rem;
     margin-top: 4rem;
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
 }
 .secondary {
     color: azure;
     text-align: center;
     font: bold 5rem Poppins, sans-serif;
-    transition:  color 2s ease-in, background-image 2s ease-in;
+    transition:  color 1s ease-in, background-image 2s ease-in;
     margin-top: 1rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
 }
 .secondary:hover{
     background-image:linear-gradient(120deg,#ff003c,#a00000);
@@ -164,16 +164,30 @@ body{
     transition: color 2s ease-in, background-image 2s ease-in;
 }
 #Contact{
-    background-color: rgb(17, 17, 17) ;
-    border-radius: 2em;
+    background-color:#000;
+    padding :3rem 1rem ;
 }
 #About_Me{
     padding:2rem;
 }
+#pfp{
+    display: flex;
+    aspect-ratio: 9/16;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1rem ;
+    pointer-events: none;
+}
+#pfp::-webkit-scrollbar{
+    display: none;
+}
 #pfp img{
-    width: 30rem;
-    border-radius: 3rem;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.5);
+    max-height: 30rem;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    margin: 0 1rem;
+    object-fit: cover;
 }
 #About_Me div p{
     font-family: "roboto",sans-serif;
@@ -199,7 +213,8 @@ body{
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+    padding: 1rem ;
+
     
 
 }
@@ -209,7 +224,8 @@ body{
 .slider img{
     flex: 1 0 100%;
     scroll-snap-align: start;
-
+    margin: 0 1rem;
+    object-fit: cover;
 }
 .slider_nav{
     display: flex;
@@ -235,3 +251,77 @@ body{
 .slider_nav a:hover{
     opacity: 1;
 }
+
+#Contact_box {
+    background-color: #0f0f0f;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    max-width: 80vw; /* Make the box responsive */
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease-in-out; /* Smooth transition */
+}
+
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem; /* Add a gap between fields */
+    margin-bottom: 1.5rem;
+}
+
+.form-field {
+    flex: 1; /* Let the fields take up the full width of the form-group */
+    min-width: 0; /* Minimum width for the two columns */
+}
+
+input, textarea {
+    width: 100%; /* Ensure 100% width minus padding */
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    background-color: #222;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensure padding and border are included in width calculation */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 5rem;
+}
+
+/* Make the form stack vertically on smaller screens */
+@media (max-width: 768px) {
+    #Contact_box {
+        max-width: 95vw; /* Slightly wider on smaller screens */
+        padding: 1rem;
+    }
+
+    .form-group {
+        flex-direction: column; /* Stack the input fields */
+        gap: 0; /* Remove gap between inputs on smaller screens */
+    }
+
+    .form-field {
+        width: 100%; /* Full width on smaller screens */
+        min-width: 100%; /* Ensure it doesn’t go smaller than 100% */
+    }
+
+    .primary {
+        font-size: 1.5rem; /* Scale down heading */
+    }
+    .secondary{
+        font-size: 2.5rem;
+    }
+
+    input, textarea {
+        font-size: 0.875rem; /* Scale down inputs */
+    }
+}
+
