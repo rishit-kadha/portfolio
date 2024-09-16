@@ -157,6 +157,17 @@ body{
     margin-bottom: 2rem;
     transition: all 0.5s ease;
 }
+.secondary-c{
+    text-align: center;
+    font: bold 5rem Poppins, sans-serif;
+    margin-top: 1rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
+    background-image:linear-gradient(120deg,#ff003c,#a00000);
+    background-clip: text;
+    color: transparent;
+}
 .secondary:hover{
     background-image:linear-gradient(120deg,#ff003c,#a00000);
     background-clip: text;
