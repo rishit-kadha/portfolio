@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "Horizon";
+  src: url("./assets/horizon.otf") format("opentype");
+}
+@font-face {
+  font-family: "HorizonO";
+  src: url("./assets/horizon_outlined.otf") format("opentype");
+}
+.horizon {
+  font-family: "Horizon", sans-serif;
+}

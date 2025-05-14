@@ -1,120 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!--Loading Screen-->
-    <div id="loading-screen" class="screen">
-        <div id="background_brand">
-            <object data="brand.svg" type="image/svg+xml" id="brand" class="loading_bar"></object> <!-- Only one #brand -->
-        </div>
-        <div id="container">
-            <button id="continue" class="hidden">C O N T I N U E</button>
-        </div>
-    </div>
-    
-    <!--Home Page-->   
-    <div id="home-page" class ="screen home hidden" >
-        <div id="container">
-        <!--NavBar-->
-            <div class="nav" style="display: flex;">
-                <div class="logo"><img src="brand_of_sacrifice.png" width="100px"></div>
-                <div id="menu">
-                <a class="links" href="index.html">Home</a>
-                <a class="links" href="About.html">About</a>
-                <a class="links" href="Portfolio.html">Portfolio</a>
-                <a class="links" href="Contact.html">Contact</a>
-                </div>
-            </div>
-            <!--Hero Section-->
-            <div id="hero">
-                <h1 class="primary">RISHIT KADHA</h1>
-                <p class="secondary">Web Designer <br>& <br>Developer</p>
-                <div>
-                    <!--Something Interesting-->
-                    <canvas id="canvas"></canvas>
-                </div>
-
-            </div>
-            <!--About Me Section-->
-            <div id="About_Me" style="background-color: #000;align-items: center; text-align: center;">
-                <h1 class="primary">Who <br><span class="secondary">Am I ?</span></h1>
-                
-                <div style="display: flex; background-color: #000;justify-content: center;">
-                    <div class="pfp">
-                        <img src="profile_pic.jpeg" >
-                    </div>
-                    <div>
-                        <p class="primary" style="background-color: #000;">I am a first year <br><span class="secondary-c">B.Tech AIML</span>student at<spam class="secondary-c">USAR GGSIPU EDC</spam></p>
-                    </div>
-
-                </div>
-
-            </div>
-            <!--Portfolio Section-->
-            <div id="Portfolio" style="background-color:#000; padding-top: 4rem;" >
-                <h1 class="primary" style="margin:0; text-align: center;">Projects I have <p class="secondary-c">Worked on !</p></h1>
-                <section class="container">
-                    <div class="slider_wrapper">
-                        <div class="slider">
-                            <img id="slide1" src="GoogleClone.png" alt="A Google Clone">
-                            <img id="slide2" src="2dPhysicsSim.png" alt="A 2D Physics Simulator">
-                            <img id="slide3" src="ZerodhaClone.png" alt="A Zerodha Landing Page Clone">
-
-                        </div>
-                        <div class="slider_nav">
-                            <a href="#slide1"></a>
-                            <a href="#slide2"></a>
-                            <a href="#slide3"></a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <!--Contact Section-->
-            <div id="Contact" style="display: flex; justify-content: space-around;">
-                <div id="Contact_box" style="display: flex; justify-content: space-around;">
-                    <form action="" style="display: flex; justify-content: space-around; flex-direction: column;">
-                        <div style="display: flex; justify-content:center; align-items: center;">
-                            <h1 class="primary" style="letter-spacing:1rem; padding-top: 0;">
-                                Contact Me
-                            </h1>
-                        </div>
-                        <div class="form-group"style="display: flex; padding:  1em 2em;">
-                            <div  class='form-field' style=" color: azure;">
-                                <label for="First_name">First Name</label><br>
-                                <input type="text" name="First_name" id="First_name">
-                            </div>
-                            <div class='form field' style="color: azure;">
-                                <label for="Last_name">Last Name</label><br>
-                                <input type="text" name="Last_name" id="Last_name">
-                            </div>
-                        </div> 
-                        <div  class='form-field'style="padding:1em 2em; align-items: center; color: azure;">
-                            <label for="email">Email</label><br>
-                            <input type="email" name="email" id="email"><br>
-                        </div>
-               
-                        <div class="form-field" style="padding:1em 2em; color: azure;">
-                            <label for="Message">Message</label><br>
-                            <input type="text" name="Message" id="Message">
-                        </div>
-                    </form>
-    
-                </div>
-            </div>
-            
-
-        </div>
-
-    </div>
-    <!--Javascript-->
-    <script src="script.js"></script>   
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
