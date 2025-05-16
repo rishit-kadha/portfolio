@@ -1,11 +1,26 @@
 import React from "react";
-import { Text, Box } from "@chakra-ui/react";
+import { Text, Box, VStack, Heading, chakra } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import Card from "../ui/Card";
 import image1 from "../../images/photo1.jpg";
 import image2 from "../../images/photo2.jpg";
 import image3 from "../../images/photo3.jpg";
 import image4 from "../../images/photo4.jpg";
+
+const Mark = chakra("mark", {
+  base: {
+    variant: "subtle",
+    bg: "green.300",
+    transition: "background-color 0.3s ease",
+    _hover: {
+      bg: "green.500",
+      variant: "solid",
+      px: 2,
+      py: 1,
+      fontWeight: "bold",
+    },
+  },
+});
 const ProjectsSection = () => {
   const projects = [
     {
@@ -33,14 +48,32 @@ const ProjectsSection = () => {
       getImageSrc: () => image4,
     },
   ];
+
   return (
-    <FullScreenSection>
-      <Text className="text-4xl font-bold">Projects</Text>
-      <Text className="mt-4 text-lg">Here are some of my projects.</Text>
+    <FullScreenSection
+      boxProps={{
+        bg: "white",
+        color: "black",
+        px: [4, 8, 12],
+        py: 12,
+      }}
+    >
+      <VStack spacing={4} mb={12} textAlign="center" maxW="600px" mx="auto">
+        <Heading as="h2" size="2xl" color="pink.500" fontWeight="extrabold">
+          <Mark>My Projects</Mark>
+        </Heading>
+        <Text fontSize="lg" color="gray.700">
+          Here are some of my projects.
+        </Text>
+      </VStack>
+
       <Box
         display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
-        gridGap={8}
+        gridTemplateColumns={["1fr", "1fr 1fr"]}
+        gap={10}
+        maxW="1200px"
+        mx="auto"
+        w="full"
       >
         {projects.map((project) => (
           <Card

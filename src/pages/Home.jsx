@@ -1,4 +1,4 @@
-import Alert from "@/components/Sections/Alert";
+import AlertBox from "@/components/Sections/AlertBox";
 import ContactMeSection from "@/components/Sections/ContactMeSection";
 import Header from "@/components/Sections/Header";
 import LandingSection from "@/components/Sections/LandingSection";
@@ -14,7 +14,6 @@ const Home = () => {
       <ProjectsSection id="projects" />
       <ContactMeSection id="contact" />
       <Footer id="footer" />
-      <Alert id="alert" />
     </div>
   );
 };

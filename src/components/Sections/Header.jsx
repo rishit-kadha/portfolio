@@ -1,5 +1,4 @@
-import { Box, HStack, Heading } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Box, HStack, Button, Text } from "@chakra-ui/react";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -8,19 +7,29 @@ import {
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}`;
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show on scroll up, hide on scroll down
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setVisible(false); // scrolling down
+      } else {
+        setVisible(true); // scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
   const socials = [
     {
       icon: faEnvelope,
@@ -46,11 +55,16 @@ const Header = () => {
 
   return (
     <Box
+      position="sticky"
       display="flex"
       justifyContent="space-between"
       alignItems="center"
       padding="1rem"
-      className="bg-stone-800 shadow-lg"
+      bg="gray.900"
+      top="0"
+      zIndex="10"
+      transition="transform 0.3s ease"
+      transform={visible ? "translateY(0)" : "translateY(-100%)"}
     >
       <HStack display="flex" gap="1rem">
         {socials.map((social, index) => (
@@ -59,11 +73,16 @@ const Header = () => {
           </a>
         ))}
       </HStack>
-      <HStack>
-        <Link to={"#projects"} onClick={handleClick}>
+      <HStack spacing={4} color="white">
+        <Button variant="ghost" as="a" href="#landing">
+          Home
+        </Button>
+        <Button variant="ghost" as="a" href="#projects">
           Projects
-        </Link>
-        <Heading>Rishit Kadha</Heading>
+        </Button>
+        <Button variant="ghost" as="a" href="#contact">
+          Contact
+        </Button>
       </HStack>
     </Box>
   );

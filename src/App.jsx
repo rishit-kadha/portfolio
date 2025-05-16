@@ -1,13 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import LandingSection from "./components/Sections/LandingSection";
+import ProjectsSection from "./components/Sections/ProjectsSection";
+import ContactMeSection from "./components/Sections/ContactMeSection";
+import Header from "./components/Sections/Header";
+import Footer from "./components/Sections/Footer";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+    <>
+      <Header />
+      <main>
+        <section id="landing">
+          <LandingSection />
+        </section>
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+        <section id="contact">
+          <ContactMeSection />
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
+
 export default App;
