@@ -1,7 +1,7 @@
-import { Box, VStack, Heading, Avatar, Text, chakra } from "@chakra-ui/react";
+import { VStack, Heading, Image, Text, chakra } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import React from "react";
-
+import pfp from "../../images/pfp.jpg";
 const Emphasized = chakra("em", {
   base: {
     fontStyle: "italic",
@@ -37,17 +37,16 @@ const LandingSection = () => {
       }}
     >
       <VStack spacing={6}>
-        <Avatar.Root>
-          <Avatar.Fallback />
-          <Avatar.Image
-            name="Rishit Kadha"
-            src="https://avatars.githubusercontent.com/u/rishit-kadha?v=4"
-            size="2xl"
-            borderColor="green.500"
-          />
-        </Avatar.Root>
+        <Image
+          src={pfp}
+          alt="Profile Picture"
+          borderRadius="full"
+          boxSize="200px"
+          objectFit="cover"
+          boxShadow="lg"
+        />
 
-        <Heading as="h1" fontSize="3xl">
+        <Heading as="h1" fontSize="3xl" m={7}>
           Hello, I'm <Mark>Rishit Kadha</Mark>
         </Heading>
 
