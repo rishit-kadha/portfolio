@@ -47,7 +47,9 @@ const ContactMeSection = () => {
     validationSchema: Yup.object({
       name: Yup.string().required("Name is required"),
       email: Yup.string().email("Invalid email").required("Email is required"),
-      message: Yup.string().required("Message is required"),
+      message: Yup.string()
+        .required("Message is required")
+        .min(25, "Message must be at least 25 characters"),
     }),
     onSubmit: (values) => {
       submit("/submit/data", values);
