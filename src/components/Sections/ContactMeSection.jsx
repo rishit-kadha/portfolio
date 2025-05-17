@@ -196,7 +196,7 @@ const ContactMeSection = () => {
                   _placeholder={{ color: "gray.500" }}
                 />
                 <Field.ErrorText color="red.500">
-                  Message is Required
+                  {formik.errors.message}
                 </Field.ErrorText>
               </Field.Root>
             </Fieldset.Content>
